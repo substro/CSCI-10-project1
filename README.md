@@ -1,4 +1,4 @@
-# CSCI410-project1
+# CSCI410 Project 1
 
 Welcome to the CSCI410 Project 1 repository. This project was created and worked on by [Ali Amin](https://github.com/substro) and [Mohammad Mahfoud](https://github.com/Mohammad-Mahfoud).
 ## Getting Started
