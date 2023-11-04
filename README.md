@@ -1,7 +1,6 @@
 # CSCI410-project1
 
-Welcome to the CSCI410-project1 repository for your mobile app project. This repository is designed for your collaboration with your classmate on a Flutter project. Follow the instructions below to get started and contribute to the project.
-
+Welcome to the CSCI410 Project 1 repository. This project was created and worked on by [Ali Amin](https://github.com/substro) and [Mohammad Mahfoud](https://github.com/Mohammad-Mahfoud).
 ## Getting Started
 
 ### Prerequisites
