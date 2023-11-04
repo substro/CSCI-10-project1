@@ -9,11 +9,13 @@ Welcome to the CSCI410 Project 1 repository. This project was created and worked
 
 ### Clone the Repository
 ```bash
-git clone https://github.com/your-username/CSCI410-project1.git
-cd CSCI410-project1
+- git clone https://github.com/your-username/CSCI410-project1.git
+
+- cd CSCI410-project1
 ```
 ###Install Dependencies and run the program
 ```bash
-flutter pub get
-flutter run
+- flutter pub get
+
+- flutter run
 ```
