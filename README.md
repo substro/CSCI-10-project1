@@ -9,7 +9,7 @@ Welcome to the CSCI410 Project 1 repository. This project was created and worked
 
 ### Clone the Repository
 ```bash
- git clone https://github.com/your-username/CSCI410-project1.git
+ git clone https://github.com/your-username/CSCI410-project1
 
  cd CSCI410-project1
 ```
