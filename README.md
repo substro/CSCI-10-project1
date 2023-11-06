@@ -4,7 +4,7 @@ Welcome to the CSCI410 Project 1 repository. This project was created and worked
 ## Getting Started
 
 ### Prerequisites
-- [Flutter](https://flutter.dev/) installed on your development environment.
+- You need [Flutter](https://flutter.dev/) installed on your machine.
 - An integrated development environment (IDE) like [Android Studio](https://developer.android.com/studio) or [Visual Studio Code](https://code.visualstudio.com/) with Flutter plugins installed.
 
 ### Clone the Repository
