@@ -13,7 +13,7 @@ Welcome to the CSCI410 Project 1 repository. This project was created and worked
 
  cd CSCI410-project1
 ```
-###Install Dependencies and run the program
+### Install Dependencies and run the program
 ```bash
  flutter pub get
 
