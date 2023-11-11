@@ -11,7 +11,7 @@ Welcome to the CSCI410 Project 1 repository. This project was created and worked
 ```bash
  git clone https://github.com/substro/csci410_project1
 
- cd CSCI410-project1
+ cd csci410_project1
 ```
 ### Install Dependencies and run the program
 ```bash
