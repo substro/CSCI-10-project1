@@ -21,7 +21,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeClass.lightTheme,
-      // darkTheme: ThemeClass.darkTheme,
+      darkTheme: ThemeClass.darkTheme,
       home: Scaffold(
         appBar: AppBar(
           toolbarHeight: 80,
