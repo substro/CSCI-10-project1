@@ -27,7 +27,7 @@ class ThemeClass {
           titleTextStyle: TextStyle(
               fontFamily: 'Electrolize',
               fontSize: 35,
-              color: HexColor("FFFFFF"))),
+              color: _themeClass.black)),
       brightness: Brightness.light);
 
   static ThemeData darkTheme = ThemeData(

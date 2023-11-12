@@ -21,13 +21,12 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeClass.lightTheme,
-      darkTheme: ThemeClass.darkTheme,
+      // darkTheme: ThemeClass.darkTheme,
       home: Scaffold(
         appBar: AppBar(
           toolbarHeight: 80,
           title: const Text(
             "Converter",
-            // style: TextStyle(fontFamily: 'Electrolize'),
           ),
           actions: [
             ThemeButton(
