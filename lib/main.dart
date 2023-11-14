@@ -1,42 +1,107 @@
 import 'package:csci410_project1/components/theme_button.dart';
-import 'package:csci410_project1/theme/app_theme.dart';
+import 'package:csci410_project1/theme/theme_provider.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:hexcolor/hexcolor.dart';
+import 'package:provider/provider.dart';
 
-void main(List<String> args) {
-  runApp(const MyApp());
+void main() async {
+  runApp(
+    MultiProvider(
+      // create the provider
+      providers: [
+        ChangeNotifierProvider(
+          create: (_) => ThemeProvider(),
+        )
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
-class MyApp extends StatefulWidget {
+class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  @override
   Widget build(BuildContext context) {
-    //currency converter body
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeClass.lightTheme,
-      darkTheme: ThemeClass.darkTheme,
-      home: Scaffold(
-        appBar: AppBar(
-          toolbarHeight: 80,
-          title: const Text(
-            "Converter",
-          ),
-          actions: [
-            ThemeButton(
-              onPressed: () {},
-            )
-          ],
-        ),
-        body: const CurrencyConverterBody(),
-      ),
+      title: 'Material App',
+      home: const HomeScreen(),
+      theme: Provider.of<ThemeProvider>(context)
+          .currentTheme, // listen to the current theme
     );
+  }
+}
+
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  bool isDarkMode = false;
+
+  @override
+  Widget build(BuildContext context) {
+    final themeProvider = Provider.of<ThemeProvider>(context, listen: false);
+    //currency converter body
+
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          "Converter",
+        ),
+        // actions: [
+        //   IconButton(
+        //     onPressed: () {
+        //       print("hi");
+        //       setState(() {
+        //         isDarkMode = !isDarkMode;
+        //       });
+        //       isDarkMode
+        //           ? themeProvider.setDarkMode()
+        //           : themeProvider.setLightMode();
+        //       print(isDarkMode.runtimeType);
+        //     },
+        //     icon: const Icon(Icons.fire_truck),
+        //   )
+        // ],
+        actions: [
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Container(
+              decoration:
+                  BoxDecoration(borderRadius: BorderRadius.circular(20)),
+              child: IconButton(
+                onPressed: () {
+                  final themeProvider = Provider.of<ThemeProvider>(context,
+                      listen:
+                          false); // get the provider, listen false is necessary cause is in a function
+
+                  setState(() {
+                    isDarkMode = !isDarkMode;
+                  }); // change the variable
+
+                  isDarkMode // call the functions
+                      ? themeProvider.setDarkMode()
+                      : themeProvider.setLightMode();
+                },
+                icon: const Icon(Icons.dark_mode),
+              ),
+            ),
+          ),
+        ],
+      ),
+      body: const CurrencyConverterBody(),
+    );
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty<bool>('isDarkMode', isDarkMode));
   }
 }
 
