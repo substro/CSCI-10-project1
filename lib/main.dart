@@ -7,7 +7,6 @@ import 'package:provider/provider.dart';
 void main() async {
   runApp(
     MultiProvider(
-      // create the provider
       providers: [
         ChangeNotifierProvider(
           create: (_) => ThemeProvider(),
@@ -45,51 +44,30 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final themeProvider = Provider.of<ThemeProvider>(context, listen: false);
-    //currency converter body
-
     return Scaffold(
       appBar: AppBar(
         title: const Text(
           "Converter",
         ),
-        // actions: [
-        //   IconButton(
-        //     onPressed: () {
-        //       print("hi");
-        //       setState(() {
-        //         isDarkMode = !isDarkMode;
-        //       });
-        //       isDarkMode
-        //           ? themeProvider.setDarkMode()
-        //           : themeProvider.setLightMode();
-        //       print(isDarkMode.runtimeType);
-        //     },
-        //     icon: const Icon(Icons.fire_truck),
-        //   )
-        // ],
         actions: [
           Padding(
             padding: const EdgeInsets.all(20.0),
-            child: Container(
-              decoration:
-                  BoxDecoration(borderRadius: BorderRadius.circular(20)),
-              child: IconButton(
-                onPressed: () {
-                  final themeProvider = Provider.of<ThemeProvider>(context,
-                      listen:
-                          false); // get the provider, listen false is necessary cause is in a function
+            child: ThemeButton(
+              onPressed: () {
+                final themeProvider = Provider.of<ThemeProvider>(context,
+                    listen:
+                        false); // get the provider, listen:false is necessary
 
-                  setState(() {
-                    isDarkMode = !isDarkMode;
-                  }); // change the variable
+                setState(() {
+                  isDarkMode = !isDarkMode;
+                }); // change the variable
 
-                  isDarkMode // call the functions
-                      ? themeProvider.setDarkMode()
-                      : themeProvider.setLightMode();
-                },
-                icon: const Icon(Icons.dark_mode),
-              ),
+                isDarkMode // call the functions
+                    ? themeProvider.setDarkMode()
+                    : themeProvider.setLightMode();
+              },
+              icon:
+                  Icon(isDarkMode ? Icons.light_mode : Icons.dark_mode_rounded),
             ),
           ),
         ],

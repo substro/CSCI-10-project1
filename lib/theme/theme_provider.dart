@@ -17,31 +17,35 @@ class ThemeProvider extends ChangeNotifier {
     // Initialize currentTheme based on system theme
     final Brightness systemBrightness =
         WidgetsBinding.instance.platformDispatcher.platformBrightness;
-    if (systemBrightness == Brightness.light) {
-      setLightMode();
-    } else {
+    if (systemBrightness == Brightness.dark) {
       setDarkMode();
+    } else {
+      setLightMode();
     }
   }
 
   void setLightMode() {
     currentTheme = ThemeData(
-        primaryColor: lightPrimaryColor,
-        scaffoldBackgroundColor: lightPrimaryColor,
-        colorScheme: const ColorScheme.light()
-            .copyWith(
-              primary: lightPrimaryColor,
-              secondary: lightSecondaryColor,
-            )
-            .copyWith(secondary: accentColor),
-        appBarTheme: AppBarTheme(
-            iconTheme: IconThemeData(color: black),
-            toolbarHeight: 80.0,
-            backgroundColor: Colors.transparent,
-            elevation: 0.0,
-            titleTextStyle: TextStyle(
-                fontFamily: 'Electrolize', fontSize: 35.0, color: black)),
-        brightness: Brightness.light);
+      primaryColor: lightPrimaryColor,
+      scaffoldBackgroundColor: lightPrimaryColor,
+      colorScheme: const ColorScheme.light()
+          .copyWith(
+            inversePrimary: black,
+            primary: lightPrimaryColor,
+            secondary: lightSecondaryColor,
+          )
+          .copyWith(secondary: accentColor),
+      appBarTheme: AppBarTheme(
+          iconTheme: IconThemeData(
+            color: white,
+          ),
+          toolbarHeight: 80.0,
+          backgroundColor: Colors.transparent,
+          elevation: 0.0,
+          titleTextStyle: TextStyle(
+              fontFamily: 'Electrolize', fontSize: 35.0, color: black)),
+      brightness: Brightness.light,
+    );
     notifyListeners();
   }
 
@@ -51,6 +55,7 @@ class ThemeProvider extends ChangeNotifier {
         scaffoldBackgroundColor: darkPrimaryColor,
         colorScheme: const ColorScheme.dark()
             .copyWith(
+              inversePrimary: white,
               primary: darkPrimaryColor,
               secondary: darkSecondaryColor,
             )
@@ -58,7 +63,7 @@ class ThemeProvider extends ChangeNotifier {
         buttonTheme: const ButtonThemeData(textTheme: ButtonTextTheme.primary),
         inputDecorationTheme: InputDecorationTheme(fillColor: white),
         appBarTheme: AppBarTheme(
-            iconTheme: IconThemeData(color: white),
+            iconTheme: IconThemeData(color: darkPrimaryColor, size: 25),
             toolbarHeight: 80.0,
             backgroundColor: Colors.transparent,
             elevation: 0.0,
@@ -68,5 +73,3 @@ class ThemeProvider extends ChangeNotifier {
     notifyListeners();
   }
 }
-
-ThemeProvider _themeProvider = ThemeProvider();
