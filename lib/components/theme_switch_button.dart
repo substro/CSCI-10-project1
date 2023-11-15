@@ -1,34 +1,47 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-class ThemeButton extends StatelessWidget {
+class ThemeButton extends StatefulWidget {
   final VoidCallback onPressed;
   final Icon icon;
-  ThemeButton({
+  const ThemeButton({
     required this.onPressed,
     required this.icon,
     Key? key,
   }) : super(key: key);
-  bool isDarkMode = false; // new variable
+
+  @override
+  State<ThemeButton> createState() => _ThemeButtonState();
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+        .add(ObjectFlagProperty<VoidCallback>.has('onPressed', onPressed));
+  }
+}
+
+class _ThemeButtonState extends State<ThemeButton> {
+  bool isDarkMode = false;
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: onPressed,
+      onPressed: widget.onPressed,
       style: ElevatedButton.styleFrom(
-        fixedSize: const Size(30, 30),
+        fixedSize: const Size(20, 20),
         elevation: 3.0,
         shape: const CircleBorder(),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
-      child: icon,
+      child: widget.icon,
     );
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty<Function>('onPressed', onPressed));
+    properties
+        .add(DiagnosticsProperty<Function>('onPressed', widget.onPressed));
     properties.add(DiagnosticsProperty<bool>('isDarkmode', isDarkMode));
     properties.add(DiagnosticsProperty<bool?>('isDarkMode', isDarkMode));
   }

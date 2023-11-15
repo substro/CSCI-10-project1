@@ -17,11 +17,10 @@ class ThemeProvider extends ChangeNotifier {
     // Initialize currentTheme based on system theme
     final Brightness systemBrightness =
         WidgetsBinding.instance.platformDispatcher.platformBrightness;
-    if (systemBrightness == Brightness.dark) {
+    if (systemBrightness == Brightness.light) {
       setDarkMode();
-    } else {
-      setLightMode();
-    }
+    } else {}
+    setLightMode();
   }
 
   void setLightMode() {
@@ -39,7 +38,7 @@ class ThemeProvider extends ChangeNotifier {
           iconTheme: IconThemeData(
             color: white,
           ),
-          toolbarHeight: 100.0,
+          toolbarHeight: 90.0,
           backgroundColor: Colors.transparent,
           elevation: 0.0,
           titleTextStyle: TextStyle(
@@ -60,11 +59,9 @@ class ThemeProvider extends ChangeNotifier {
               secondary: darkSecondaryColor,
             )
             .copyWith(secondary: accentColor),
-        buttonTheme: const ButtonThemeData(textTheme: ButtonTextTheme.primary),
-        inputDecorationTheme: InputDecorationTheme(fillColor: white),
         appBarTheme: AppBarTheme(
             iconTheme: IconThemeData(color: darkPrimaryColor, size: 25),
-            toolbarHeight: 100.0,
+            toolbarHeight: 90.0,
             backgroundColor: Colors.transparent,
             elevation: 0.0,
             titleTextStyle: TextStyle(
