@@ -28,7 +28,7 @@ class _ThemeButtonState extends State<ThemeButton> {
     return ElevatedButton(
       onPressed: widget.onPressed,
       style: ElevatedButton.styleFrom(
-        fixedSize: const Size(20, 20),
+        fixedSize: const Size(50, 50),
         elevation: 3.0,
         shape: const CircleBorder(),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
