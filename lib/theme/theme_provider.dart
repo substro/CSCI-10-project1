@@ -39,11 +39,11 @@ class ThemeProvider extends ChangeNotifier {
           iconTheme: IconThemeData(
             color: white,
           ),
-          toolbarHeight: 80.0,
+          toolbarHeight: 100.0,
           backgroundColor: Colors.transparent,
           elevation: 0.0,
           titleTextStyle: TextStyle(
-              fontFamily: 'Electrolize', fontSize: 35.0, color: black)),
+              fontFamily: 'Electrolize', fontSize: 40.0, color: black)),
       brightness: Brightness.light,
     );
     notifyListeners();
@@ -64,11 +64,11 @@ class ThemeProvider extends ChangeNotifier {
         inputDecorationTheme: InputDecorationTheme(fillColor: white),
         appBarTheme: AppBarTheme(
             iconTheme: IconThemeData(color: darkPrimaryColor, size: 25),
-            toolbarHeight: 80.0,
+            toolbarHeight: 100.0,
             backgroundColor: Colors.transparent,
             elevation: 0.0,
             titleTextStyle: TextStyle(
-                fontFamily: 'Electrolize', fontSize: 35.0, color: white)),
+                fontFamily: 'Electrolize', fontSize: 40.0, color: white)),
         brightness: Brightness.dark);
     notifyListeners();
   }

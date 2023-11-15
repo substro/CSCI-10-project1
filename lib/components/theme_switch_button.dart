@@ -1,7 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-@immutable
 class ThemeButton extends StatelessWidget {
   final VoidCallback onPressed;
   final Icon icon;
@@ -14,16 +13,15 @@ class ThemeButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        color: Theme.of(context).colorScheme.inversePrimary,
-        // borderRadius: BorderRadius.circular(50),
+    return ElevatedButton(
+      onPressed: onPressed,
+      style: ElevatedButton.styleFrom(
+        fixedSize: const Size(30, 30),
+        elevation: 3.0,
+        shape: const CircleBorder(),
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
-      child: IconButton(
-        onPressed: onPressed,
-        icon: icon,
-      ),
+      child: icon,
     );
   }
 

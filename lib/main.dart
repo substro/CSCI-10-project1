@@ -1,4 +1,4 @@
-import 'package:csci410_project1/components/theme_button.dart';
+import 'package:csci410_project1/components/theme_switch_button.dart';
 import 'package:csci410_project1/theme/theme_provider.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -6,14 +6,7 @@ import 'package:provider/provider.dart';
 
 void main() async {
   runApp(
-    MultiProvider(
-      providers: [
-        ChangeNotifierProvider(
-          create: (_) => ThemeProvider(),
-        )
-      ],
-      child: const MyApp(),
-    ),
+    const MyApp(),
   );
 }
 
@@ -22,12 +15,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Material App',
-      home: const HomeScreen(),
-      theme: Provider.of<ThemeProvider>(context)
-          .currentTheme, // listen to the current theme
+    return ChangeNotifierProvider(
+      create: (context) => ThemeProvider(),
+      child: Consumer<ThemeProvider>(
+        builder: (context, themeProvider, child) => MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'Material App',
+          home: const HomeScreen(),
+          theme: Provider.of<ThemeProvider>(context).currentTheme,
+        ),
+      ),
     );
   }
 }
@@ -46,6 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        
         title: const Text(
           "Converter",
         ),
