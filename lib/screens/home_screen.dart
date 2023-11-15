@@ -1,4 +1,4 @@
-import 'package:csci410_project1/components/converter.dart';
+import 'package:csci410_project1/components/converter_section.dart';
 import 'package:csci410_project1/components/app_bar.dart'; // Import the new file
 import 'package:csci410_project1/theme/theme_provider.dart';
 import 'package:flutter/foundation.dart';
