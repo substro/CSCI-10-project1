@@ -35,7 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
               : themeProvider.setLightMode();
         },
       ),
-      body: const CurrencyConverterBody(),
+      body: const UnitConverterBody(),
     );
   }
 

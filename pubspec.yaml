@@ -1,5 +1,5 @@
 name: csci410_project1
-description: A simple and intuitive currency converter app built with Flutter.
+description: A simple and intuitive Unit converter app built with Flutter.
 
 publish_to: "none"
 
@@ -15,6 +15,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   hexcolor: ^3.0.1
   provider: ^6.1.1
+  gap: ^3.0.1
 
 dev_dependencies:
   flutter_test:
