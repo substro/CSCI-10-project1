@@ -3,15 +3,15 @@ import 'package:hexcolor/hexcolor.dart';
 
 class ThemeProvider extends ChangeNotifier {
   ThemeData? currentTheme;
-  //this is the light theme background
-  Color black = HexColor("000000");
   Color white = HexColor("FFFFFF");
+  Color black = HexColor("000000");
+  //this is the light theme background
   Color lightPrimaryColor = HexColor("F5F5F5");
+  Color lightSecondaryColor = HexColor("FFFFFF");
+  Color accentColor = HexColor("575DE3");
   // this is the dark theme background
   Color darkPrimaryColor = HexColor("030320");
-  Color lightSecondaryColor = HexColor("FFFFFF");
   Color darkSecondaryColor = HexColor("1A2148");
-  Color accentColor = HexColor("575DE3");
 
   ThemeProvider() {
     // Initialize currentTheme based on system theme
