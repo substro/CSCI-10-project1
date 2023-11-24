@@ -60,18 +60,6 @@ class OutputSection extends StatelessWidget {
           ),
         ),
 
-        // Add text field for output value
-        // TextField(
-        //   controller: TextEditingController(text: outputValue.toString()),
-        //   readOnly: true,
-        //   style: const TextStyle(color: Colors.black),
-        //   decoration: const InputDecoration(
-        //     constraints: BoxConstraints(maxWidth: 250, maxHeight: 250),
-        //     labelText: 'Output Value',
-        //     // Add other decoration properties as needed
-        //   ),
-        // ),
-
         const SizedBox(height: 20),
       ],
     );
