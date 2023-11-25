@@ -21,6 +21,9 @@ class OutputSection extends StatelessWidget {
       context,
       listen: false,
     );
+    final TextEditingController outputController = TextEditingController();
+    outputController.text = outputValue.toString();
+
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
@@ -41,10 +44,23 @@ class OutputSection extends StatelessWidget {
                     value: 'miles',
                     child: Text('Miles'),
                   ),
+                  DropdownMenuItem<String>(
+                    value: 'meters',
+                    child: Text('Meters'),
+                  ),
+                  DropdownMenuItem<String>(
+                    value: 'feet',
+                    child: Text('Feet'),
+                  ),
+                  DropdownMenuItem<String>(
+                    value: 'millimeters',
+                    child: Text('Millimeters'),
+                  ),
                 ],
                 onChanged: onOutputUnitChanged),
           ],
         ),
+
         TextField(
           controller: TextEditingController(text: outputValue.toString()),
           readOnly: true,

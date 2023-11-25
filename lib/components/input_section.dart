@@ -43,30 +43,44 @@ class InputSection extends StatelessWidget {
                   value: 'feet',
                   child: Text('Feet'),
                 ),
+                DropdownMenuItem<String>(
+                  value: 'kilometers',
+                  child: Text('Kilometers'),
+                ),
+                DropdownMenuItem<String>(
+                  value: 'miles',
+                  child: Text('Miles'),
+                ),
+                DropdownMenuItem<String>(
+                  value: 'millimeters',
+                  child: Text('Millimeters'),
+                ),
               ],
               onChanged: onInputUnitChanged,
             ),
           ],
         ),
 
-        //TODO: allow only numbers to be input
         TextField(
-          onChanged: (newValue) {},
+          onChanged: onInputValueChanged,
           style: const TextStyle(color: Colors.black),
           decoration: InputDecoration(
             constraints: const BoxConstraints(maxWidth: 250, maxHeight: 250),
             labelText: 'Input Value',
             border: const OutlineInputBorder(
-                borderSide: BorderSide(color: Colors.red)),
+              borderSide: BorderSide(color: Colors.red),
+            ),
             labelStyle: TextStyle(color: Colors.grey[500]),
             focusColor: themeProvider.accentColor,
             focusedBorder: OutlineInputBorder(
               borderSide: BorderSide(
-                  color: themeProvider
-                      .accentColor), // Change the color to your desired hover color
+                color: themeProvider
+                    .accentColor, // Change the color to your desired hover color
+              ),
             ),
           ),
         ),
+
         const SizedBox(height: 20),
       ],
     );
