@@ -37,7 +37,10 @@ class OutputSection extends StatelessWidget {
               style: TextStyle(color: themeProvider.white),
             ),
             const Gap(10),
+            //TODO:move these items to a separate file and map them
             DropdownButton<String>(
+                //!dropdown icon color
+                iconEnabledColor: themeProvider.white,
                 //!dropdown text color
                 style: TextStyle(color: themeProvider.white),
                 //!dropdown bg color

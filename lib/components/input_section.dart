@@ -36,11 +36,14 @@ class InputSection extends StatelessWidget {
             ),
             const Gap(10),
             DropdownButton<String>(
+              //!dropdown icon color
+              iconEnabledColor: themeProvider.white,
               //!dropdown text color
               style: TextStyle(color: themeProvider.white),
               //!dropdown bg color
               dropdownColor: themeProvider.darkSecondaryColor,
               value: inputUnit,
+              //TODO:move these items to a separate file and map them
               items: const [
                 DropdownMenuItem<String>(
                   value: 'meters',

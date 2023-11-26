@@ -59,7 +59,6 @@ class ThemeProvider extends ChangeNotifier {
               secondary: darkSecondaryColor,
             )
             .copyWith(secondary: accentColor),
-        cardColor: darkSecondaryColor,
         appBarTheme: AppBarTheme(
             iconTheme: IconThemeData(color: darkPrimaryColor, size: 25),
             toolbarHeight: 90.0,
