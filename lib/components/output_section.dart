@@ -68,6 +68,14 @@ class OutputSection extends StatelessWidget {
                     value: 'inches',
                     child: Text('Inches'),
                   ),
+                  DropdownMenuItem<String>(
+                    value: 'micrometers',
+                    child: Text('Micrometers'),
+                  ),
+                  DropdownMenuItem<String>(
+                    value: 'nanometers',
+                    child: Text('Nanometers'),
+                  ),
                 ],
                 onChanged: onOutputUnitChanged),
           ],

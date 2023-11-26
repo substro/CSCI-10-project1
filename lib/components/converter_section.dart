@@ -200,6 +200,74 @@ class _UnitConverterBodyState extends State<UnitConverterBody> {
       return 0.0277778; // 1 inch = 0.0277778 yards
     } else if (fromUnit == 'yards' && toUnit == 'inches') {
       return 36.0; // 1 yard = 36 inches
+    } else if (fromUnit == 'micrometers' && toUnit == 'millimeters') {
+      return 0.001; // 1 micrometer = 0.001 millimeters
+    } else if (fromUnit == 'millimeters' && toUnit == 'micrometers') {
+      return 1000.0; // 1 millimeter = 1000 micrometers
+    } else if (fromUnit == 'micrometers' && toUnit == 'centimeters') {
+      return 0.0001; // 1 micrometer = 0.0001 centimeters
+    } else if (fromUnit == 'centimeters' && toUnit == 'micrometers') {
+      return 10000.0; // 1 centimeter = 10000 micrometers
+    } else if (fromUnit == 'micrometers' && toUnit == 'meters') {
+      return 1e-6; // 1 micrometer = 1e-6 meters
+    } else if (fromUnit == 'meters' && toUnit == 'micrometers') {
+      return 1e6; // 1 meter = 1e6 micrometers
+    } else if (fromUnit == 'micrometers' && toUnit == 'kilometers') {
+      return 1e-9; // 1 micrometer = 1e-9 kilometers
+    } else if (fromUnit == 'kilometers' && toUnit == 'micrometers') {
+      return 1e9; // 1 kilometer = 1e9 micrometers
+    } else if (fromUnit == 'micrometers' && toUnit == 'feet') {
+      return 3.28084e-6; // 1 micrometer = 3.28084e-6 feet
+    } else if (fromUnit == 'feet' && toUnit == 'micrometers') {
+      return 304800.0; // 1 foot = 304800 micrometers
+    } else if (fromUnit == 'micrometers' && toUnit == 'miles') {
+      return 6.2137e-13; // 1 micrometer = 6.2137e-13 miles
+    } else if (fromUnit == 'miles' && toUnit == 'micrometers') {
+      return 1.60934e12; // 1 mile = 1.60934e12 micrometers
+    } else if (fromUnit == 'micrometers' && toUnit == 'inches') {
+      return 3.93701e-5; // 1 micrometer = 3.93701e-5 inches
+    } else if (fromUnit == 'inches' && toUnit == 'micrometers') {
+      return 25400.0; // 1 inch = 25400 micrometers
+    } else if (fromUnit == 'micrometers' && toUnit == 'yards') {
+      return 1.09361e-6; // 1 micrometer = 1.09361e-6 yards
+    } else if (fromUnit == 'yards' && toUnit == 'micrometers') {
+      return 914400.0; // 1 yard = 914400 micrometers
+    } else if (fromUnit == 'nanometers' && toUnit == 'micrometers') {
+      return 0.001; // 1 nanometer = 0.001 micrometers
+    } else if (fromUnit == 'micrometers' && toUnit == 'nanometers') {
+      return 1000.0; // 1 micrometer = 1000 nanometers
+    } else if (fromUnit == 'nanometers' && toUnit == 'millimeters') {
+      return 0.000001; // 1 nanometer = 0.000001 millimeters
+    } else if (fromUnit == 'millimeters' && toUnit == 'nanometers') {
+      return 1000000.0; // 1 millimeter = 1000000 nanometers
+    } else if (fromUnit == 'nanometers' && toUnit == 'centimeters') {
+      return 1e-7; // 1 nanometer = 1e-7 centimeters
+    } else if (fromUnit == 'centimeters' && toUnit == 'nanometers') {
+      return 1e7; // 1 centimeter = 1e7 nanometers
+    } else if (fromUnit == 'nanometers' && toUnit == 'meters') {
+      return 1e-9; // 1 nanometer = 1e-9 meters
+    } else if (fromUnit == 'meters' && toUnit == 'nanometers') {
+      return 1e9; // 1 meter = 1e9 nanometers
+    } else if (fromUnit == 'nanometers' && toUnit == 'kilometers') {
+      return 1e-12; // 1 nanometer = 1e-12 kilometers
+    } else if (fromUnit == 'kilometers' && toUnit == 'nanometers') {
+      return 1e12; // 1 kilometer = 1e12 nanometers
+    } else if (fromUnit == 'nanometers' && toUnit == 'feet') {
+      return 3.28084e-9; // 1 nanometer = 3.28084e-9 feet
+    } else if (fromUnit == 'feet' && toUnit == 'nanometers') {
+      return 3.048e8; // 1 foot = 3.048e8 nanometers
+    } else if (fromUnit == 'nanometers' && toUnit == 'miles') {
+      return 6.2137e-13; // 1 nanometer = 6.2137e-13 miles
+    } else if (fromUnit == 'miles' && toUnit == 'nanometers') {
+      return 1.60934e13; // 1 mile = 1.60934e13 nanometers
+    } else if (fromUnit == 'nanometers' && toUnit == 'inches') {
+      return 3.93701e-8; // 1 nanometer = 3.93701e-8 inches
+    } else if (fromUnit == 'inches' && toUnit == 'nanometers') {
+      return 2.54e7; // 1 inch = 2.54e7 nanometers
+    } else if (fromUnit == 'nanometers' && toUnit == 'yards') {
+      return 1.09361e-12; // 1 nanometer = 1.09361e-12 yards
+    } else if (fromUnit == 'yards' && toUnit == 'nanometers') {
+      return 9.144e11; // 1 yard = 9.144e11 nanometers
     } else {
       // If units are the same or conversion not defined, return 1 (no conversion)
       return 1.0;
