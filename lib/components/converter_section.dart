@@ -12,8 +12,8 @@ class UnitConverterBody extends StatefulWidget {
 }
 
 class _UnitConverterBodyState extends State<UnitConverterBody> {
-  String inputUnit = 'Meters';
-  String outputUnit = 'Kilometers';
+  String inputUnit = 'meters';
+  String outputUnit = 'kilometers';
   double inputValue = 0;
   double outputValue = 0;
 

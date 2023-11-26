@@ -1,8 +1,8 @@
+import 'package:csci410_project1/data/menu_items.dart';
 import 'package:csci410_project1/theme/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:provider/provider.dart';
-
 
 class InputSection extends StatelessWidget {
   final bool isDarkMode = false;
@@ -46,12 +46,7 @@ class InputSection extends StatelessWidget {
               style: TextStyle(color: themeProvider.white),
               dropdownColor: themeProvider.darkSecondaryColor,
               value: inputUnit,
-              items: UnitConstants.map((unit) {
-                return DropdownMenuItem<String>(
-                  value: unit,
-                  child: Text(capitalize(unit)),
-                );
-              }).toList(),
+              items: dropdownItems,
               onChanged: onInputUnitChanged,
             ),
           ],
