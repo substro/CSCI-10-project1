@@ -12,12 +12,12 @@ class UnitConverterBody extends StatefulWidget {
 }
 
 class _UnitConverterBodyState extends State<UnitConverterBody> {
-  bool isDarkMode = false;
   String inputUnit = 'meters';
   String outputUnit = 'kilometers';
   double inputValue = 0;
   double outputValue = 0;
 
+  final bool isDarkMode = false;
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -32,8 +32,8 @@ class _UnitConverterBodyState extends State<UnitConverterBody> {
         height: 300,
         decoration: BoxDecoration(
           color: isDarkMode
-              ? themeProvider.darkSecondaryColor
-              : themeProvider.white,
+              ? themeProvider.white
+              : themeProvider.darkSecondaryColor,
           borderRadius: BorderRadius.circular(20),
           boxShadow: [
             BoxShadow(

@@ -14,13 +14,13 @@ class ThemeProvider extends ChangeNotifier {
   Color darkSecondaryColor = HexColor("1A2148");
 
   ThemeProvider() {
-    // Initialize currentTheme based on system theme
     final Brightness systemBrightness =
         WidgetsBinding.instance.platformDispatcher.platformBrightness;
     if (systemBrightness == Brightness.light) {
       setDarkMode();
-    } else {}
-    setLightMode();
+    } else {
+      setLightMode();
+    }
   }
 
   void setLightMode() {
@@ -30,7 +30,7 @@ class ThemeProvider extends ChangeNotifier {
       colorScheme: const ColorScheme.light()
           .copyWith(
             inversePrimary: black,
-            primary: lightPrimaryColor,
+            primary: darkPrimaryColor,
             secondary: lightSecondaryColor,
           )
           .copyWith(secondary: accentColor),
@@ -59,6 +59,7 @@ class ThemeProvider extends ChangeNotifier {
               secondary: darkSecondaryColor,
             )
             .copyWith(secondary: accentColor),
+        cardColor: darkSecondaryColor,
         appBarTheme: AppBarTheme(
             iconTheme: IconThemeData(color: darkPrimaryColor, size: 25),
             toolbarHeight: 90.0,

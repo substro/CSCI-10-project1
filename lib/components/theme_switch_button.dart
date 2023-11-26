@@ -7,8 +7,8 @@ class ThemeButton extends StatefulWidget {
   const ThemeButton({
     required this.onPressed,
     required this.icon,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   State<ThemeButton> createState() => _ThemeButtonState();

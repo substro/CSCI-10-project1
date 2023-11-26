@@ -1,8 +1,10 @@
 import 'package:csci410_project1/theme/theme_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:provider/provider.dart';
 
 class InputSection extends StatelessWidget {
+  final bool isDarkMode = false;
   final String inputUnit;
   final double inputValue;
   final Function(String?)? onInputUnitChanged;
@@ -25,13 +27,19 @@ class InputSection extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        // Add dropdown for input unit
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text('Input Unit:'),
-            const SizedBox(width: 10),
+            Text(
+              'Input Unit:',
+              style: TextStyle(color: themeProvider.white),
+            ),
+            const Gap(10),
             DropdownButton<String>(
+              //!dropdown text color
+              style: TextStyle(color: themeProvider.white),
+              //!dropdown bg color
+              dropdownColor: themeProvider.darkSecondaryColor,
               value: inputUnit,
               items: const [
                 DropdownMenuItem<String>(
@@ -79,28 +87,34 @@ class InputSection extends StatelessWidget {
             ),
           ],
         ),
-
+        const Gap(10),
         TextField(
+          //!cursor color
+          cursorColor: themeProvider.accentColor,
+          keyboardType: TextInputType.number,
           onChanged: onInputValueChanged,
-          style: const TextStyle(color: Colors.black),
+          style: const TextStyle(color: Colors.white),
           decoration: InputDecoration(
             constraints: const BoxConstraints(maxWidth: 250, maxHeight: 250),
             labelText: 'Input Value',
-            border: const OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.red),
-            ),
+            border: const OutlineInputBorder(),
             labelStyle: TextStyle(color: Colors.grey[500]),
-            focusColor: themeProvider.accentColor,
+            focusColor: Colors.red,
+            //!border color
+            enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: themeProvider.white,
+              ),
+            ),
+            //!border color when focused
             focusedBorder: OutlineInputBorder(
               borderSide: BorderSide(
-                color: themeProvider
-                    .accentColor, // Change the color to your desired hover color
+                color: themeProvider.accentColor,
               ),
             ),
           ),
         ),
-
-        const SizedBox(height: 20),
+        const Gap(20),
       ],
     );
   }

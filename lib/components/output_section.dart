@@ -4,6 +4,7 @@ import 'package:gap/gap.dart';
 import 'package:provider/provider.dart';
 
 class OutputSection extends StatelessWidget {
+  final bool isDarkMode = false;
   final String outputUnit;
   final double outputValue;
   final Function(String?)? onOutputUnitChanged;
@@ -31,9 +32,16 @@ class OutputSection extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text('Output Unit:'),
+            Text(
+              'Output Unit:',
+              style: TextStyle(color: themeProvider.white),
+            ),
             const Gap(10),
             DropdownButton<String>(
+                //!dropdown text color
+                style: TextStyle(color: themeProvider.white),
+                //!dropdown bg color
+                dropdownColor: themeProvider.darkSecondaryColor,
                 value: outputUnit,
                 items: const [
                   DropdownMenuItem<String>(
@@ -80,23 +88,35 @@ class OutputSection extends StatelessWidget {
                 onChanged: onOutputUnitChanged),
           ],
         ),
+        const Gap(10),
 
         TextField(
           controller: TextEditingController(text: outputValue.toString()),
           readOnly: true,
-          style: const TextStyle(color: Colors.black),
+          style: const TextStyle(color: Colors.white),
           decoration: InputDecoration(
             constraints: const BoxConstraints(maxWidth: 250, maxHeight: 250),
             labelText: 'Output Value',
-            labelStyle: TextStyle(color: themeProvider.black),
-            border: const OutlineInputBorder(),
+            labelStyle: TextStyle(color: Colors.grey[500]),
+            border: OutlineInputBorder(
+                borderSide: BorderSide(
+                    color: isDarkMode
+                        ? themeProvider.accentColor
+                        : themeProvider.white)),
+            //!border color
+            enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: themeProvider.white,
+              ),
+            ),
+            //!border color when focused
             focusedBorder: OutlineInputBorder(
               borderSide: BorderSide(color: themeProvider.accentColor),
             ),
           ),
         ),
 
-        const SizedBox(height: 20),
+        const Gap(20),
       ],
     );
   }
