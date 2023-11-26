@@ -128,6 +128,78 @@ class _UnitConverterBodyState extends State<UnitConverterBody> {
       return 0.00328084; // 1 millimeter = 0.00328084 feet
     } else if (fromUnit == 'feet' && toUnit == 'millimeters') {
       return 304.8; // 1 foot = 304.8 millimeters
+    } else if (fromUnit == 'centimeters' && toUnit == 'millimeters') {
+      return 10.0; // 1 centimeter = 10 millimeters
+    } else if (fromUnit == 'millimeters' && toUnit == 'centimeters') {
+      return 0.1; // 1 millimeter = 0.1 centimeters
+    } else if (fromUnit == 'centimeters' && toUnit == 'meters') {
+      return 0.01; // 1 centimeter = 0.01 meters
+    } else if (fromUnit == 'meters' && toUnit == 'centimeters') {
+      return 100.0; // 1 meter = 100 centimeters
+    } else if (fromUnit == 'centimeters' && toUnit == 'kilometers') {
+      return 1e-5; // 1 centimeter = 1e-5 kilometers
+    } else if (fromUnit == 'kilometers' && toUnit == 'centimeters') {
+      return 1e5; // 1 kilometer = 1e5 centimeters
+    } else if (fromUnit == 'centimeters' && toUnit == 'miles') {
+      return 6.2137e-6; // 1 centimeter = 6.2137e-6 miles
+    } else if (fromUnit == 'miles' && toUnit == 'centimeters') {
+      return 1.60934e8; // 1 mile = 1.60934e8 centimeters
+    } else if (fromUnit == 'centimeters' && toUnit == 'feet') {
+      return 0.0328084; // 1 centimeter = 0.0328084 feet
+    } else if (fromUnit == 'feet' && toUnit == 'centimeters') {
+      return 30.48; // 1 foot = 30.48 centimeters
+    } else if (fromUnit == 'yards' && toUnit == 'meters') {
+      return 0.9144; // 1 yard = 0.9144 meters
+    } else if (fromUnit == 'meters' && toUnit == 'yards') {
+      return 1.09361; // 1 meter = 1.09361 yards
+    } else if (fromUnit == 'yards' && toUnit == 'kilometers') {
+      return 9.144e-4; // 1 yard = 9.144e-4 kilometers
+    } else if (fromUnit == 'kilometers' && toUnit == 'yards') {
+      return 1093.61; // 1 kilometer = 1093.61 yards
+    } else if (fromUnit == 'yards' && toUnit == 'miles') {
+      return 5.68182e-4; // 1 yard = 5.68182e-4 miles
+    } else if (fromUnit == 'miles' && toUnit == 'yards') {
+      return 1760.0; // 1 mile = 1760 yards
+    } else if (fromUnit == 'yards' && toUnit == 'feet') {
+      return 3.0; // 1 yard = 3 feet
+    } else if (fromUnit == 'feet' && toUnit == 'yards') {
+      return 0.333333; // 1 foot = 0.333333 yards
+    } else if (fromUnit == 'yards' && toUnit == 'millimeters') {
+      return 914.4; // 1 yard = 914.4 millimeters
+    } else if (fromUnit == 'millimeters' && toUnit == 'yards') {
+      return 1.09361e-3; // 1 millimeter = 1.09361e-3 yards
+    } else if (fromUnit == 'yards' && toUnit == 'centimeters') {
+      return 91.44; // 1 yard = 91.44 centimeters
+    } else if (fromUnit == 'centimeters' && toUnit == 'yards') {
+      return 0.0109361; // 1 centimeter = 0.0109361 yards
+    } else if (fromUnit == 'inches' && toUnit == 'centimeters') {
+      return 2.54; // 1 inch = 2.54 centimeters
+    } else if (fromUnit == 'centimeters' && toUnit == 'inches') {
+      return 0.393701; // 1 centimeter = 0.393701 inches
+    } else if (fromUnit == 'inches' && toUnit == 'millimeters') {
+      return 25.4; // 1 inch = 25.4 millimeters
+    } else if (fromUnit == 'millimeters' && toUnit == 'inches') {
+      return 0.0393701; // 1 millimeter = 0.0393701 inches
+    } else if (fromUnit == 'inches' && toUnit == 'meters') {
+      return 0.0254; // 1 inch = 0.0254 meters
+    } else if (fromUnit == 'meters' && toUnit == 'inches') {
+      return 39.3701; // 1 meter = 39.3701 inches
+    } else if (fromUnit == 'inches' && toUnit == 'kilometers') {
+      return 2.54e-5; // 1 inch = 2.54e-5 kilometers
+    } else if (fromUnit == 'kilometers' && toUnit == 'inches') {
+      return 39370.1; // 1 kilometer = 39370.1 inches
+    } else if (fromUnit == 'inches' && toUnit == 'feet') {
+      return 0.0833333; // 1 inch = 0.0833333 feet
+    } else if (fromUnit == 'feet' && toUnit == 'inches') {
+      return 12.0; // 1 foot = 12 inches
+    } else if (fromUnit == 'inches' && toUnit == 'miles') {
+      return 1.5783e-5; // 1 inch = 1.5783e-5 miles
+    } else if (fromUnit == 'miles' && toUnit == 'inches') {
+      return 63360.0; // 1 mile = 63360 inches
+    } else if (fromUnit == 'inches' && toUnit == 'yards') {
+      return 0.0277778; // 1 inch = 0.0277778 yards
+    } else if (fromUnit == 'yards' && toUnit == 'inches') {
+      return 36.0; // 1 yard = 36 inches
     } else {
       // If units are the same or conversion not defined, return 1 (no conversion)
       return 1.0;

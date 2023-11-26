@@ -56,6 +56,18 @@ class OutputSection extends StatelessWidget {
                     value: 'millimeters',
                     child: Text('Millimeters'),
                   ),
+                  DropdownMenuItem<String>(
+                    value: 'centimeters',
+                    child: Text('Centimeters'),
+                  ),
+                  DropdownMenuItem<String>(
+                    value: 'yards',
+                    child: Text('Yards'),
+                  ),
+                  DropdownMenuItem<String>(
+                    value: 'inches',
+                    child: Text('Inches'),
+                  ),
                 ],
                 onChanged: onOutputUnitChanged),
           ],

@@ -1,4 +1,3 @@
-// input_section.dart
 import 'package:csci410_project1/theme/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -54,6 +53,18 @@ class InputSection extends StatelessWidget {
                 DropdownMenuItem<String>(
                   value: 'millimeters',
                   child: Text('Millimeters'),
+                ),
+                DropdownMenuItem<String>(
+                  value: 'centimeters',
+                  child: Text('Centimeters'),
+                ),
+                DropdownMenuItem<String>(
+                  value: 'yards',
+                  child: Text('Yards'),
+                ),
+                DropdownMenuItem<String>(
+                  value: 'inches',
+                  child: Text('Inches'),
                 ),
               ],
               onChanged: onInputUnitChanged,
