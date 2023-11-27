@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class ThemeButton extends StatefulWidget {
@@ -12,12 +11,6 @@ class ThemeButton extends StatefulWidget {
 
   @override
   State<ThemeButton> createState() => _ThemeButtonState();
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-        .add(ObjectFlagProperty<VoidCallback>.has('onPressed', onPressed));
-  }
 }
 
 class _ThemeButtonState extends State<ThemeButton> {
@@ -35,14 +28,5 @@ class _ThemeButtonState extends State<ThemeButton> {
       ),
       child: widget.icon,
     );
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-        .add(DiagnosticsProperty<Function>('onPressed', widget.onPressed));
-    properties.add(DiagnosticsProperty<bool>('isDarkmode', isDarkMode));
-    properties.add(DiagnosticsProperty<bool?>('isDarkMode', isDarkMode));
   }
 }

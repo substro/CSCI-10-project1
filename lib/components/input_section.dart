@@ -40,7 +40,6 @@ class InputSection extends StatelessWidget {
               style: TextStyle(color: themeProvider.white),
             ),
             const Gap(10),
-            // TODO: move these items to a separate file and map them
             DropdownButton<String>(
               iconEnabledColor: themeProvider.white,
               style: TextStyle(color: themeProvider.white),
