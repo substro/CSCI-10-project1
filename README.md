@@ -2,7 +2,7 @@
 
 Welcome to the CSCI410 Project 1 repository. This project was created and worked on by [Ali Amin(substro)](https://github.com/substro) and [Mohammad Mahfoud](https://github.com/Mohammad-Mahfoud).
 
-##Project Summary:
+## Project Summary:
 
 [Ali Amins' Project report](https://wakatime.com/@a076bf3c-16eb-4a29-bc20-24af36e097f9/projects/zvmjttnwbc?start=2023-11-14&end=2023-11-27)
 
